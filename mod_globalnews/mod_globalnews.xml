@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="4.0" client="site">
+    <name>MOD_GLOBALNEWS</name>
+    <author>Ad3mix</author>
+    <version>1.0.0</version>
+    <description>MOD_GLOBALNEWS_DESCRIPTION</description>
+    <copyright>Copyright (C) 2025 Ad3mix. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic" label="Basic Options">
+                <field name="catid" type="category" label="Select Category" description="Select the category of articles to display" extension="com_content" multiple="true" required="true" />
+                <field name="count" type="number" default="5" label="Number of Articles" description="Number of articles to display" />
+                <field name="ordering" type="list" label="Ordering" description="Order in which articles are displayed">
+                    <option value="created">Newest First</option>
+                    <option value="hits">Most Read</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="layout" label="Layout Options">
+                <field name="columns" type="number" default="3" label="Number of Columns" description="Set the number of columns for the articles layout." />
+                <field name="border_width" type="number" default="1" label="Border Width (px)" description="Set the width of the border around each article." />
+                <field name="border_color" type="color" default="#ccc" label="Border Color" description="Set the color of the border around each article." />
+                <field name="image_width" type="number" default="150" label="Thumbnail Width (px)" description="Set the width of the thumbnail images." />
+                <field name="image_height" type="number" default="150" label="Thumbnail Height (px)" description="Set the height of the thumbnail images." />
+                <field name="show_image" type="list" default="1" label="Show Images" description="Show or hide article images">
+                    <option value="1">Show</option>
+                    <option value="0">Hide</option>
+                </field>
+                <field name="show_intro" type="list" default="1" label="Show Intro Text" description="Show or hide the intro text">
+                    <option value="1">Show</option>
+                    <option value="0">Hide</option>
+                </field>
+                <field name="title_size" type="number" default="16" label="Article Title Size (px)" description="Set the font size for article titles." />
+                <field name="category_title_size" type="number" default="18" label="Category Title Size (px)" description="Set the font size for category titles." />
+                <field name="image_fit" type="list" default="contain" label="Image Fit" description="Choose how images should fit within their container.">
+                <option value="contain">Scale (no cropping)</option>
+                <option value="cover">Fill (cropped)</option>
+               </field>
+			</fieldset>
+        </fields>
+    </config>
+
+    <files>
+        <filename module="mod_globalnews">mod_globalnews.php</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+    </files>
+
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_globalnews.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_globalnews.sys.ini</language>
+    </languages>
+</extension>
